@@ -1,0 +1,29 @@
+/*
+ * # Copyright (c) 2025, Frank Li<lgl88911@163.com>
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+#include <espressif/esp32s3/esp32s3_wroom_n16r8.dtsi>
+#include <espressif/partitions_0x0_amp_16M.dtsi>
+
+/ {
+	model = "ESP32-S3-Touch-LCD-2 APPCPU";
+	compatible = "halfcoder,esp32-s3-touch-lcd-2";
+
+	chosen {
+		zephyr,sram = &sram1;
+		zephyr,ipc_shm = &shm0;
+		zephyr,ipc = &ipm0;
+		zephyr,flash = &flash0;
+		zephyr,code-partition = &slot0_appcpu_partition;
+	};
+};
+
+&flash0 {
+	reg = <0x0 DT_SIZE_M(16)>;
+};
+
+&trng0 {
+	status = "okay";
+};

@@ -1,13 +1,12 @@
-# This file is provided so that the application can be compiled using Twister,
-# the Zephyr testing tool. In this file, multiple combinations can be specified,
-# so that you can easily test all of them locally or in CI.
+# Copyright (c) 2025, Frank Li<lgl88911@163.com>
+
 sample:
-  description: Example application
-  name: example-application 
+  description: lvgl xml work with zephyr
+  name: LVGLXMLwZephyr 
 common:
   build_only: true
   integration_platforms:
-    - custom_plank
+    - native_sim
     - nucleo_f302r8
 tests:
   app.default: {}

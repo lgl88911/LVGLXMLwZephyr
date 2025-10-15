@@ -1,6 +1,8 @@
+# Copyright (c) 2025, Frank Li<lgl88911@163.com>
+
 west-commands:
-  - file: scripts/example_west_command.py
+  - file: scripts/lvglxml.py
     commands:
-      - name: example-west-command
-        class: ExampleWestCommand
-        help: an example west extension command
+      - name: lvglxml
+        class: LvglXmlCommand
+        help: import lvgl xml export C code to zephyr app

@@ -1,5 +1,4 @@
-# Copyright (c) 2021 Nordic Semiconductor ASA
-# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025, Frank Li<lgl88911@163.com>
 
 manifest:
   self:
@@ -12,11 +11,11 @@ manifest:
   projects:
     - name: zephyr
       remote: zephyrproject-rtos
-      revision: main
+      revision: v4.2.0
       import:
         # By using name-allowlist we can clone only the modules that are
         # strictly needed by the application.
         name-allowlist:
-          - cmsis_6    # required by the ARM port for Cortex-M
-          - hal_nordic # required by the custom_plank board (Nordic based)
-          - hal_stm32  # required by the nucleo_f302r8 board (STM32 based)
+          - hal_espressif
+          - lvgl
+          - picolibc

@@ -1,0 +1,28 @@
+# Copyright (c) 2025, Frank Li<lgl88911@163.com>
+identifier: esp32s3_touch_lcd_2/esp32s3/appcpu
+name: ESP32-S3-Touch-LCD-2 APPCPU
+type: mcu
+arch: xtensa
+toolchain:
+  - zephyr
+supported:
+  - uart
+testing:
+  ignore_tags:
+    - net
+    - bluetooth
+    - flash
+    - cpp
+    - posix
+    - watchdog
+    - logging
+    - kernel
+    - pm
+    - gpio
+    - crypto
+    - eeprom
+    - heap
+    - cmsis_rtos
+    - jwt
+    - zdsp
+vendor: halfcoder

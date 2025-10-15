@@ -1,0 +1,4 @@
+# Copyright (c) 2025, Frank Li<lgl88911@163.com>
+# SPDX-License-Identifier: Apache-2.0
+
+CONFIG_CLOCK_CONTROL=y

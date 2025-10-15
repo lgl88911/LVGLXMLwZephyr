@@ -1,0 +1,156 @@
+/*
+ * Copyright (c) 2025, Frank Li<lgl88911@163.com>
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+#include <espressif/esp32s3/esp32s3_wroom_n16r8.dtsi>
+#include "esp32s3_touch_lcd_2-pinctrl.dtsi"
+#include <zephyr/dt-bindings/display/panel.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zephyr/dt-bindings/pwm/pwm.h>
+#include <espressif/partitions_0x0_amp_16M.dtsi>
+#include <zephyr/dt-bindings/display/ili9xxx.h>
+
+/ {
+	model = "ESP32-S3-Touch-LCD-2 PROCPU";
+	compatible = "halfcoder,esp32-s3-touch-lcd-2";
+
+	chosen {
+		zephyr,sram = &sram1;
+		zephyr,console = &uart0;
+		zephyr,shell-uart = &uart0;
+		zephyr,flash = &flash0;
+		zephyr,code-partition = &slot0_partition;
+		zephyr,display = &ili9341;
+		zephyr,bt-hci = &esp32_bt_hci;
+		zephyr,touch = &ft6336_touch;
+	};
+
+	/* Buttons 
+	buttons {
+		compatible = "gpio-keys";
+		button0: button_0 {
+			gpios = <&gpio0 0 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "BOOT Button";
+			zephyr,code = <INPUT_KEY_0>;
+		};
+	};*/
+
+	/* Touch Controller */
+	lvgl_pointer {
+		compatible = "zephyr,lvgl-pointer-input";
+		input = <&ft6336_touch>;
+	};
+
+	/* Regulators */
+	lcd_backlight_en {
+		compatible = "regulator-fixed";
+		regulator-name = "lcd_backlight_enable";
+		enable-gpios = <&gpio0 0 GPIO_ACTIVE_HIGH>;
+		regulator-boot-on;
+	};
+
+	/* MIPI DBI */
+	mipi_dbi{
+		compatible = "zephyr,mipi-dbi-spi";
+		spi-dev = <&spi2>;
+		dc-gpios = <&gpio0 1 GPIO_ACTIVE_HIGH>;
+		reset-gpios = <&gpio0 38 GPIO_ACTIVE_LOW>;
+		write-only;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		ili9341: ili9341@0 {
+			compatible = "ilitek,ili9341";
+			mipi-max-frequency = <80000000>;
+			reg = <0>;
+			pixel-format = <ILI9XXX_PIXEL_FORMAT_RGB565>;
+			rotation = <0>;
+			width = <240>;
+			height = <320>;
+			display-inversion;
+		};
+	};
+};
+
+
+
+&flash0 {
+	reg = <0x0 DT_SIZE_M(16)>;
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};
+
+&i2c1 {
+	status ="okay";
+	clock-frequency = <I2C_BITRATE_STANDARD>;
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-names = "default";
+
+	ft6336_touch: ft5336@38 {
+		status = "okay";
+		compatible = "focaltech,ft5336";
+		reg = <0x38>;
+		int-gpios = <&gpio0 20 GPIO_ACTIVE_LOW>;
+		reset-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+		swapped-x-y;
+	};
+};
+
+&spi2 {
+	status = "okay";
+	#address-cells = <1>;
+	#size-cells = <0>;
+	pinctrl-0 = <&spim2_default>;
+	pinctrl-names = "default";
+	cs-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+/*
+	cs-gpios = <&gpio0 39 GPIO_ACTIVE_LOW>,  // ST7789V的CS引脚
+				<&gpio0 19 GPIO_ACTIVE_LOW>;   // SDHC的CS引脚
+	
+	
+	
+	sdcard: sdcard@1 {
+		compatible = "zephyr,sdhc-spi-slot";
+		reg = <1>;
+		status = "okay";
+		mmc {
+			compatible = "zephyr,sdmmc-disk";
+			disk-name = "SD";
+			status = "okay";
+		};
+		spi-max-frequency = <20000000>;
+	};*/
+
+};
+
+&trng0 {
+	status = "okay";
+};
+
+&uart0 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&uart0_default>;
+	pinctrl-names = "default";
+};
+
+&usb_serial {
+	/* requires resoldering of resistors on the board */
+	status = "okay";
+};
+
+&wdt0 {
+	status = "okay";
+};
+
+&esp32_bt_hci {
+	status = "okay";
+};

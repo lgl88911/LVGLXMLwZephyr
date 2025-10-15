@@ -1,0 +1,7 @@
+# Copyright (c) 2025, Frank Li<lgl88911@163.com>
+board:
+  name: esp32s3_touch_lcd_2
+  full_name: ESP32-S3-Touch-LCD-2
+  vendor: halfcoder
+  socs:
+  - name: esp32s3
