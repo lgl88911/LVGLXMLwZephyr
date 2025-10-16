@@ -47,10 +47,18 @@ Zephyr project.''')
             log.err(f"Source path is not a directory: {args.source_path}")
             return 1
             
-        # Ensure target directory exists
+        # Ensure target directory exists - create if it doesn't
         if not os.path.exists(target_dir):
-            log.err(f"Target directory does not exist: {target_dir}")
-            return 1
+            log.wrn(f"Target directory does not exist: {target_dir}")
+            log.inf(f"Creating target directory: {target_dir}")
+            try:
+                os.makedirs(target_dir, exist_ok=True)
+                log.inf(f"Target directory created successfully: {target_dir}")
+            except Exception as e:
+                log.err(f"Failed to create target directory: {e}")
+                return 1
+        else:
+            log.inf(f"Target directory exists: {target_dir}")
             
         # Build the rsync command
         rsync_cmd = [
