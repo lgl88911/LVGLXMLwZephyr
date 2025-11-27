@@ -110,11 +110,12 @@
 	#size-cells = <0>;
 	pinctrl-0 = <&spim2_default>;
 	pinctrl-names = "default";
-	cs-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+	cs-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>,
+				<&gpio0 19 GPIO_ACTIVE_LOW>;   // SDHC的CS引脚
 /*
 	cs-gpios = <&gpio0 39 GPIO_ACTIVE_LOW>,  // ST7789V的CS引脚
 				<&gpio0 19 GPIO_ACTIVE_LOW>;   // SDHC的CS引脚
-	
+*/	
 	
 	
 	sdcard: sdcard@1 {
@@ -126,8 +127,8 @@
 			disk-name = "SD";
 			status = "okay";
 		};
-		spi-max-frequency = <20000000>;
-	};*/
+		spi-max-frequency = <80000000>;
+	};
 
 };
 
