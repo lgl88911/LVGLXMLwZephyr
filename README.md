@@ -39,26 +39,10 @@ git clone https://github.com/lgl88911/ePTest.git
 
 ### Step 3: Import and Run
 
-```bash
-cd ~/lzp
-west lvglxml ./ePTest/
-west build -b native_sim ./LVGLXMLwZephyr/app
-west build -t run
-```
+[Basic Usage](docs/basic.md)
+[tutorials](docs/tutorials.md)
+[examples](docs/examples.md)
 
-You will see:
-
-![native\_sim](native_sim.png)
-
-This project also provides an example based on real **ESP32-S3** hardware:
-
-```bash
-west build -b esp32s3_touch_lcd_2/esp32s3/procpu LVGLXMLwZephyr/app/
-west flash
-```
-
-You will see:
-![esp32s3\_touch\_lcd\_2](esp32s3_touch_lcd_2.png)
 
 ## How to Modify Your Own LVGL XML Project
 

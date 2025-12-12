@@ -29,24 +29,12 @@ git clone https://github.com/lgl88911/ePTest.git
 3. 执行 Project->Build UI Project
 
 ### 第三步，导入和执行
-```
-cd ~/lzp
-west lvglxml ./ePTest/
-west build -b native_sim ./LVGLXMLwZephyr/app
-west build -t run
-```
-你可以看到
+下面的“教程”和“示例”是LVGL官方仓库的代码 https://github.com/lvgl/lvgl_editor@4b4d80bc
 
-![native_sim](native_sim.png)
+[基本使用](docs/basic.zh.md)
+[教程](docs/tutorials.zh.md)
+[示例](docs/examples.zh.md)
 
-本项目也提供了基于 esp32s3 真实硬件的示例
-
-```
-west build -b esp32s3_touch_lcd_2/esp32s3/procpu LVGLXMLwZephyr/app/
-west flash
-```
-你可以看到
-![esp32s3_touch_lcd_2](esp32s3_touch_lcd_2.png)
 
 ## 如何修改自建的 LVGL XML 项目
 当你的 LVGL XML 项目名不是 ePTest 时，需要修改 LVGLXMLwZephyr/app/src/main.c 文件
