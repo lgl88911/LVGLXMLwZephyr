@@ -1,3 +1,7 @@
+## Basic Usage
+
+A very simple example of LVGL XML and Zephyr integration.
+
 ```bash
 cd ~/lzp
 west lvglxml ./ePTest/

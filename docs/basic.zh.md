@@ -1,3 +1,7 @@
+## 基本使用
+
+一个最简单的 LVGL XML 和 Zephyr 整合的示例
+
 ```
 cd ~/lzp
 west lvglxml ./ePTest/
