@@ -51,10 +51,43 @@ west flash
 你可以看到:
 
 1_hello_world 示例
+
+<video controls>
+  <source src="1h.mp4" type="video/mp4">
+</video>
+
 2_new_component 示例
+
+<video controls>
+  <source src="2c.mp4" type="video/mp4">
+</video>
+
 3_assets 示例
+
+![](3a.png)
+
 4_screens 示例
+<video controls>
+  <source src="4s.mp4" type="video/mp4">
+</video>
+
 5_layouts 示例
+<video controls>
+  <source src="5l.mp4" type="video/mp4">
+</video>
+
 6_data_binding 示例
+<video controls>
+  <source src="6d.webm" type="video/webm">
+</video>
+
 7_translations 示例
+
+<video controls>
+  <source src="7t.mp4" type="video/mp4">
+</video>
+
 8_animations 示例
+<video controls>
+  <source src="8a.mp4" type="video/mp4">
+</video>
