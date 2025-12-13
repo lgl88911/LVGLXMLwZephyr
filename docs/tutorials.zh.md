@@ -1,4 +1,4 @@
-## 示例
+## 示例 ([English](tutorials.md))
 
 这是LVGL Editor github 仓库的示例项目 https://github.com/lvgl/lvgl_editor/tree/master/examples, LVGL官方的教程示例会需要搭配文件系统使用，因此只提供在esp32s3上的真机演示。
 
@@ -52,40 +52,33 @@ west flash
 
 1_hello_world 示例
 
-![](1h.mp4)
+![](1h.gif)
 
 2_new_component 示例
 
-<video controls>
-  <source src="2c.mp4" type="video/mp4">
-</video>
+![](2c.gif)
 
 3_assets 示例
 
 ![](3a.jpg)
 
 4_screens 示例
-<video controls>
-  <source src="4s.mp4" type="video/mp4">
-</video>
+
+![](4s.gif)
 
 5_layouts 示例
-<video controls>
-  <source src="5l.mp4" type="video/mp4">
-</video>
+
+![](5l.gif)
 
 6_data_binding 示例
-<video controls>
-  <source src="6d.webm" type="video/webm">
-</video>
+
+![](6d.gif)
+
 
 7_translations 示例
 
-<video controls>
-  <source src="7t.mp4" type="video/mp4">
-</video>
+![](7t.gif)
 
 8_animations 示例
-<video controls>
-  <source src="8a.mp4" type="video/mp4">
-</video>
+
+![](8a.gif)

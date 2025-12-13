@@ -32,7 +32,9 @@ git clone https://github.com/lgl88911/ePTest.git
 下面的“教程”和“示例”是LVGL官方仓库的代码 https://github.com/lvgl/lvgl_editor@4b4d80bc
 
 [基本使用](docs/basic.zh.md)
+
 [教程](docs/tutorials.zh.md)
+
 [示例](docs/examples.zh.md)
 
 
