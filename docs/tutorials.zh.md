@@ -52,9 +52,7 @@ west flash
 
 1_hello_world 示例
 
-<video controls>
-  <source src="1h.mp4" type="video/mp4">
-</video>
+![](1h.mp4)
 
 2_new_component 示例
 
@@ -64,7 +62,7 @@ west flash
 
 3_assets 示例
 
-![](3a.png)
+![](3a.jpg)
 
 4_screens 示例
 <video controls>
