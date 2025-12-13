@@ -1,4 +1,4 @@
-## 示例
+## 示例 ([English](examples.md))
 
 这是LVGL Editor github 仓库的示例项目 https://github.com/lvgl/lvgl_editor/tree/master/examples, 涵盖了大多数控件的使用示例。其在480x480的屏幕上运行效果最好。为了让其能在esp32s3上运行，做了一些改动，将图片和字体都以数据的形式嵌入到了代码中。
 
@@ -35,3 +35,5 @@ west flash
 ```
 
 你可以看到:
+
+![](e.gif)
