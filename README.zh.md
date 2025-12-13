@@ -1,7 +1,6 @@
 # 演示如何使用 LVGLXMLwZephyr 导出 LVGL XML 并在 Zephyr 中使用 [English](README.md)
 这是一个 Zephyr+[LVGL Pro](https://pro.lvgl.io/) 项目示例。该项目为 LVGL Pro 和 Zephyr 应用整合开发提供了快捷的路径。在 Zephyr App 中集成了 west 命令可以将 LVGL Pro XML 文件生成的 C 代码导出到该项目下，只用修改 3 行代码既可以在 Zephyr 中运行 LVGL Pro 产生的 lvgl 代码。
 
-**注意：** 目前 Zephyr 项目中集成的 LVGL 版本是 9.3.0 而 LVGL Pro XML Editor 导出的 lvgl 代码是基于 9.4.0。因此目前 LVGL Pro XML Editor 导出的 lvgl 代码可能和一部分不能用，需要等 Zephyr 项目中集成的 LVGL 版本升级到 9.4.0 后才能全面使用。
 
 ## 使用方法
 所有的操作都基于 Linux 系统。

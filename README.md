@@ -3,8 +3,6 @@
 This is a **Zephyr + [LVGL Pro](https://pro.lvgl.io/)** project example. The project provides a streamlined workflow for integrating LVGL Pro and Zephyr applications.
 Within the Zephyr App, the integrated `west` command allows you to export the C code generated from LVGL Pro XML files directly into this project. With just **three lines of code modification**, you can run the LVGL code produced by LVGL Pro within Zephyr.
 
-**Note:** Currently, the LVGL version integrated in the Zephyr project is **9.3.0**, while the LVGL code exported from **LVGL Pro XML Editor** is based on **9.4.0**.
-Therefore, the LVGL code exported by the LVGL Pro XML Editor may **not work completely** at this time. It will be fully compatible once the LVGL version integrated in the Zephyr project is upgraded to **9.4.0**.
 
 ## Usage
 
